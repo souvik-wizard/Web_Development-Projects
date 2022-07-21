@@ -1,0 +1,175 @@
+
+body{    
+    margin: 0; 
+    background-color: #ffffff;
+
+}
+
+#head{
+    background-color: #CDF0EA;
+    padding: 10ex;
+    text-align: center;
+    position: relative;
+}
+
+#mid{
+    background-color: white;
+    position: relative;
+        
+}
+
+#tail{
+    margin-top: 20px;
+    padding: 20px;
+    position: static;
+    height: 150px;
+    background-color:#CDF0EA ;
+    justify-content: center;
+}
+
+
+.head-name{
+    margin: 12ex auto 0 ;
+    display: block;
+    /* position: relative;
+    top: 12ex; */
+}
+
+h1{
+    margin: 0;
+    font-family: 'Sacramento', cursive;
+    position: relative;
+    font-size: 5rem;
+    color: #5bb5a2;
+    
+}
+
+#role{
+   
+    font-family: Arima, cursive;
+    font-size: 1.6rem;
+    color: #5bb5a2;
+    
+}
+
+
+#land{
+    text-align: center;
+    position: relative;
+    top: 12ex;
+
+}
+#boy{
+    
+    width: 60px;
+    position:absolute;
+    left: 40px;
+    top: 25px;
+      
+
+}
+
+.right-cloud{
+
+    position: absolute;
+    right: 18em;
+    top: 18ex;
+    
+    
+
+}
+
+.left-cloud{
+    position: absolute;
+    left: 18em;
+    top:23em;
+
+}
+
+
+.profile{
+    text-align: center;
+    padding: 50px; 
+}
+.mid-profile{
+    text-align: center;
+    margin-bottom: 10ex;
+}
+
+.for-h2{
+    text-align: center;
+    padding: 15px;
+    color: #009373;
+    font-size: 3rem;
+    font-family: Josefin Sans, sans-serif;
+    text-align: center;
+    
+}
+.for-h3{
+    text-align: center;
+    margin-bottom: 3ex;
+    font-size: 1.7rem;
+    color: #4ab19a;
+    font-family:Lato, sans-serif;
+    text-align: center;
+}
+p{
+    color: #40514e;
+    margin:  10px;
+    text-align: center;
+    font-size:1.3rem
+    
+    
+}
+.buttom-p{
+    margin-bottom: 10ex;
+}
+hr{
+    margin:10px auto 10px auto;
+    border-style: dotted none none;
+    border-color: rgb(193, 187, 187);
+    border-width: 5px;
+    width: 3%; 
+}
+
+.link{
+    padding: 20px; 
+    
+}
+.social{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.credit{
+    
+    font-size: 1rem;
+    color:#029b7a;
+}
+.souvik{
+    /* text-decoration: none; */
+    color: inherit;
+
+}
+.skill-row{
+    text-align: center;
+    width: 50%;
+    margin: 10ex auto 20ex auto;
+}
+.intro1{
+
+    width: 25ex;
+}
+.intro2{
+    margin: 0 30px ;
+    float: left;
+    height: 25ex;
+    width: 25ex;
+}.intro3{
+    margin: 0 30px;
+    float: right;
+    height: 25ex;
+    width: 25ex;
+}
