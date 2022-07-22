@@ -125,11 +125,11 @@ p{
     margin-bottom: 10ex;
 }
 hr{
-    margin:10px auto 10px auto;
+    
     border-style: dotted none none;
     border-color: rgb(193, 187, 187);
     border-width: 5px;
-    width: 3%; 
+    width: 4%; 
 }
 
 .link{
