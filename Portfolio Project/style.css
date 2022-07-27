@@ -173,3 +173,31 @@ hr{
     height: 25ex;
     width: 25ex;
 }
+
+.btn {
+    text-align: center;
+    background: #11cdd4;
+    background-image: -webkit-linear-gradient(top, #11cdd4, #11999e);
+    background-image: -moz-linear-gradient(top, #11cdd4, #11999e);
+    background-image: -ms-linear-gradient(top, #11cdd4, #11999e);
+    background-image: -o-linear-gradient(top, #11cdd4, #11999e);
+    background-image: linear-gradient(to bottom, #11cdd4, #11999e);
+    -webkit-border-radius: 30;
+    -moz-border-radius: 30;
+    border-radius: 30px;
+    font-family: Josefin Sans, sans-serif;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+  }
+  
+  .btn:hover {
+    background: #30e3cb;
+    background-image: -webkit-linear-gradient(top, #30e3cb, #2bc48d);
+    background-image: -moz-linear-gradient(top, #30e3cb, #2bc48d);
+    background-image: -ms-linear-gradient(top, #30e3cb, #2bc48d);
+    background-image: -o-linear-gradient(top, #30e3cb, #2bc48d);
+    background-image: linear-gradient(to bottom, #30e3cb, #2bc48d);
+    text-decoration: none;
+  }
