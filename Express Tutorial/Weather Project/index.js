@@ -1,19 +1,27 @@
+require("dotenv").config()
+
 const express=require("express")
-const http = require("https");
+const http = require("https")
+const bodyParser=require("body-parser")
+const showWeather=require("./showWeather")
 
 const app=express()
+app.use(bodyParser.urlencoded({extended:true}));
 
 app.get("/",function(request,response){
+    response.sendFile(__dirname +"/index.html")   
+})
 
-    
+app.post("/weather", function(request,response){
+        const city=request.body.cityName
 
-    const options = {
-        "method": "GET",
+        const options = {
+        "method": "GET", 
         "hostname": "weatherapi-com.p.rapidapi.com",
         "port": null,
-        "path": `/current.json?q=Kolkata`,
+        "path": `/current.json?q=${city}`,
         "headers": {
-            "X-RapidAPI-Key": "b772aa655cmshd6b3aab9ad7d7e0p10a524jsn57a88a590afb",
+            "X-RapidAPI-Key":process.env.RANDOMER_API_TOKEN,
             "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
             "useQueryString": true
         }
@@ -34,22 +42,23 @@ app.get("/",function(request,response){
             // response.send(JSON.parse(body.toString()))
 
             const parseString=JSON.parse(body.toString())
-            const wd=parseString.current.temp_c
-            const wd2=parseString.location.name
-            const wd3=parseString.location.localtime
-            
-            console.log(parseString)
-
-            response.send("The current temp in " +wd2+ " is " +wd+ " degree celcious. Date & time  " +wd3)
+            const wdTemp=parseString.current.temp_c
+            const wdCity=parseString.location.name
+            const wdTime=parseString.location.localtime
+            const wdCountry=parseString.location.country
+            const wdCondition=parseString.current.condition.text
+            const iconUrl=("https:" +(parseString.current.condition.icon))
+                
+            // console.log(parseString)
+            const param=showWeather(wdCity,wdCountry,wdTemp,wdTime,wdCondition,iconUrl)
+    
+            response.send(param)
         })
         
     });
        
     req.end();
-
-    
 })
-
 
 app.listen(3000,function(req,res){
     console.log("Our server is working")

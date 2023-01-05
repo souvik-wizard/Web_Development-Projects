@@ -94,3 +94,5 @@ dist
 # Gatsby files
 .cache/
 # Comment in t
+
+.env
