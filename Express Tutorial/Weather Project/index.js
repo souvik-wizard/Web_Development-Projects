@@ -37,8 +37,7 @@ app.post("/weather", function(request,response){
     
         res.on("end", function () {
             const body = Buffer.concat(chunks);
-
-            // console.log(body.toString());
+;
             // response.send(JSON.parse(body.toString()))
 
             const parseString=JSON.parse(body.toString())
