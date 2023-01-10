@@ -60,5 +60,5 @@ app.post("/weather", function(request,response){
 })
 
 app.listen(3000,function(req,res){
-    console.log("Our server is working")
+    console.log("Our server is working on port 3000")
 })
