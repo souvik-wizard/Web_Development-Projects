@@ -53,9 +53,7 @@ app.post("/weather", function(request,response){
     
             response.send(param)
         })
-        
     });
-       
     req.end();
 })
 
