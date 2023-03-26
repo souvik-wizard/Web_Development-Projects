@@ -24,22 +24,37 @@ const articleSchema = new mongoose.Schema({
 
 const Article = mongoose.model("Article", articleSchema);
 
-app.get("/articles", async function (req, res) {
-    const articles = await Article.find()
-    res.send(articles);
-});
+app.route("/articles")
 
-app.post("/articles",async function (req, res) {
-    console.log(req.body.title);
-    console.log(req.body.content);
+    .get(async function (req, res) {
+        const articles = await Article.find()
+        res.send(articles);
+    })
 
-    const newArticle = new Article({
-        title: req.body.title,
-        content: req.body.content
+    .post(async function (req, res) {
+        console.log(req.body.title);
+        console.log(req.body.content);
+
+        const newArticle = new Article({
+            title: req.body.title,
+            content: req.body.content
+        });
+        await newArticle.save();
+        res.redirect("/articles");
+    })
+
+    .delete(async function (req, res) {
+        await Article.deleteMany();
+        res.redirect("/articles");
     });
-    await newArticle.save();
-    res.redirect("/articles");
-});
+
+app.route("/articles/:articleTitle")
+
+    .get(async (req, res) => {
+        res.send(await Article.findOne({ title: req.params.articleTitle }))
+    });
+
+
 
 app.listen(80, function () {
     console.log("Server started on port 3000");
