@@ -51,11 +51,11 @@ app.route("/articles")
 app.route("/articles/:articleTitle")
 
     .get(async (req, res) => {
-        const findArticle=await Article.findOne({ title: req.params.articleTitle })
+        const findArticle = await Article.findOne({ title: req.params.articleTitle })
         res.send(findArticle);
     })
     .put(async (req, res) => {
-        const putArticle= await Article.findOneAndUpdate(
+        const putArticle = await Article.findOneAndUpdate(
             { title: req.params.articleTitle },
             { title: req.body.title, content: req.body.content },
             { overwrite: true }
@@ -63,19 +63,21 @@ app.route("/articles/:articleTitle")
         res.send(putArticle);
     })
     .patch(async (req, res) => {
-        const patchArticle=await Article.findOneAndUpdate(
+        const patchArticle = await Article.findOneAndUpdate(
             { title: req.params.articleTitle },
             { $set: req.body }
         )
         res.send(patchArticle);
     })
     .delete(async (req, res) => {
-        const deleteArticle=await Article.findOneAndDelete(
+        const deleteArticle = await Article.findOneAndDelete(
             { title: req.params.articleTitle }
         )
         res.send(deleteArticle);
     });
-app.get("*", (req, res)=> {
+
+    
+app.get("*", (req, res) => {
     res.redirect("/articles");
 })
 
